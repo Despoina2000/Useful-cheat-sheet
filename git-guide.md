@@ -1,4 +1,4 @@
-# What is Git Repository and how can we use it
+# What is Git Repository and how we can use it
 A Git repository is a virtual storage space for your project. It allows you to preserve many versions of your code that you can access, alter, and update as required. It resembles the image below:
 
 <img width="1000" height="372" alt="image" src="https://github.com/user-attachments/assets/1ffa2c78-c7f0-4f35-8592-9d41ebdee9cd" />
@@ -33,6 +33,97 @@ git clone <repository url>
 ```
 
 # How to create a Feature Branch
+
+The appropriate practice to ensure your changes do not affect the main branch, create a dedicated branch for your work by running the following command:
+
+```
+git branch <branch name>
+```
+
+# How to work in a Feature Branch
+
+This section focuses on the recommended workflow for working in a feature branch that will later be merged into the main branch. Steps marked with `*` are required when multiple contributors are working on the same feature branch; otherwise, they can be omitted.
+
+- `*` Check if other contributers have made any changes in the feature branch, such as altering existing files or adding files.
+  ```
+  git pull origin <branch name>
+  ```
+- `*` After pulling changes you may need to resolve conflicts. **Conflicts** occured when two or more contributors have changed the same lines in a file, or if a file has been deleted while another contributor was modifying it. In these cases, Git cannot automatically determine what is correct.
+- Implement your changes. Your changes at the moment will be locally and will not impact the feature branch.
+- Check which files have been changed before committing. **Commit** is the process of updating the branch. The bellow command will give list of changes compared the current version of the feature branch before them.
+  ```
+  git status
+  git diff
+  ```
+- Stage the relevant files that you want to commit. **Stage** is a status of a change which is ready for commit. Here is some ways to do it.
+  - To commit everything:
+    ```
+    git add .
+    ```
+  - To commit a specific file:
+    ```
+    git add <file>
+    ```
+- Commit changes with the following commands.
+    ```
+    git commit -m "Appropriate message that descripe the purpose of the major changes."
+    ```
+- Update the branch to the remote repository.
+  ```
+  git push origin <branch name>
+  ```
+- When your task has been finished and all the changes has been pushed to the feature branch, it is ready to be merged with the main branch.
+    - First pull changes that may have happened to the main branch.
+        ```
+        git pull origin main
+        ```
+    - Resolve conflicts that may occure.
+    - Once you pushed the resolve of the conflicts, the feature branch it is ready to merged with main.
+        ```
+        git merge origin/main
+        ```
+- Since it is merged with main branch, you can delete the branch
+  ```
+  git push origin --delete <branch name>
+  ```
+
+# Special cases
+
+- If you need to switch to a different branch.
+  ```
+  git switch <branch name>
+  ```
+- If you are not ready to push changes you can stash them and revive them when it is needed.
+    - Stash all modified code
+      ```
+      git stash push -m "What is the code about"
+      ```
+  - If you want to stash also files that just being created you should use this command instead:
+    
+      ```
+      git stash -u
+      ```
+  - When you want to apply the stashed code:
+      - First, check the list of you stashed code:
+        ```
+        git stash list
+        ```
+        Responce must be:
+        ```
+        stash@{0}: On <branch name>: What is the code about
+        ```
+    - Then apply the one you wanted by executing the command:
+      ```
+      git stash apply stash@{0}
+      ```
+- If accidentally commit changes that you want to revive and clear, you should follow this commands:
+  ```
+  git reset --soft HEAD~1
+  ```
+  Then you can stash the code if you need it for something else and then
+  ```
+  git push --force
+  ```
 
  
 
