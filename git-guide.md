@@ -154,7 +154,7 @@ git restore --staged <file>
  - ### Git repository:
      is a virtual storage space for your project
  - ### Branch:
-     each one represents a separate version of the project at the time and point it was constructed to implement a task
+     each one represents a separate version of the project at the time and point it was constructed and it is being used for task implementation
  - ### Clone: 
    create a copy of a branch
  - ### Commit: 
