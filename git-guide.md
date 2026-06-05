@@ -1,3 +1,13 @@
+# Menu
+- [What is Git Repository and how we can use it](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#what-is-git-repository-and-how-we-can-use-it)
+- [How to install Git](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-install-git)
+- [How to initialize a new Git repository](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-initialize-a-new-git-repository)
+- [How to clone an existing Git repository](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-clone-an-existing-git-repository)
+- [How to create a Feature Branch](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-create-a-feature-branch)
+- [How to work on a Feature Branch](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-work-on-a-feature-branch)
+- [Special cases](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#special-cases)
+
+
 # What is Git Repository and how we can use it
 A Git repository is a virtual storage space for your project. It allows you to preserve many versions of your code that you can access, alter, and update as required. It resembles the image below:
 
@@ -40,7 +50,7 @@ The appropriate practice to ensure your changes do not affect the main branch, c
 git branch <branch name>
 ```
 
-# How to work in a Feature Branch
+# How to work on a Feature Branch
 
 This section focuses on the recommended workflow for working in a feature branch that will later be merged into the main branch. Steps marked with `*` are required when multiple contributors are working on the same feature branch; otherwise, they can be omitted.
 
