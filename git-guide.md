@@ -44,6 +44,15 @@ git branch <branch name>
 
 This section focuses on the recommended workflow for working in a feature branch that will later be merged into the main branch. Steps marked with `*` are required when multiple contributors are working on the same feature branch; otherwise, they can be omitted.
 
+- You need to switch to the feature branch.
+  ```
+  git switch <branch name>
+  ```
+  If the branch it is not yet created but you need to create it and work on it right away, you can use this command
+  ```
+  git switch -c <branch name>
+  ```
+
 - `*` Check if other contributers have made any changes in the feature branch, such as altering existing files or adding files.
   ```
   git pull origin <branch name>
@@ -88,11 +97,15 @@ This section focuses on the recommended workflow for working in a feature branch
   ```
 
 # Special cases
+- If a file has been accidentally modified you can undo the changes by using this command:
+```
+git restore <file>
+```
+- If a file accidentally being staged, you can undo the action by using this command:
+```
+git restore --staged <file>
+```
 
-- If you need to switch to a different branch.
-  ```
-  git switch <branch name>
-  ```
 - If you are not yet ready to push your changes, you can temporarily save them using Git Stash and restore them later when needed.
     - Stash all modified code
       ```
