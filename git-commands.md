@@ -16,25 +16,25 @@ git clone --branch <branch> <url>
 
 - Basic Workflow
   - Check Status & Differences
-```
-git status
-git diff
-git diff --staged
-```
+    ```
+    git status
+    git diff
+    git diff --staged
+    ```
 
   - Stage Files
-  ```
-git add <file>
-git add .
-git add -p
-```
+    ```
+      git add <file>
+      git add .
+      git add -p
+      ```
 
   - Commit Changes
-  ```
-git commit -m "message"
-git commit -am "message"
-git commit --amend
-```
+      ```
+    git commit -m "message"
+    git commit -am "message"
+    git commit --amend
+    ```
 
 - Branching & Switching
 ```
