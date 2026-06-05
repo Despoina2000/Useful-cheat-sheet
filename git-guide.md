@@ -48,14 +48,14 @@ This section focuses on the recommended workflow for working in a feature branch
   ```
   git pull origin <branch name>
   ```
-- `*` After pulling changes you may need to resolve conflicts. **Conflicts** occured when two or more contributors have changed the same lines in a file, or if a file has been deleted while another contributor was modifying it. In these cases, Git cannot automatically determine what is correct.
-- Implement your changes. Your changes at the moment will be locally and will not impact the feature branch.
-- Check which files have been changed before committing. **Commit** is the process of updating the branch. The bellow command will give list of changes compared the current version of the feature branch before them.
+- `*` After pulling changes, you may need to resolve merge conflicts. **Conflicts** occur when two or more contributors modify the same lines within a file, or when one contributor deletes a file that another contributor has modified. In such situations, Git cannot automatically determine which changes should be retained and requires manual resolution.
+- Implement your changes locally. At this stage, your modifications remain on your local machine and do not affect the remote feature branch.
+- Review the modified files before creating a commit. **Commit** records and saves your changes to the branch's history. The following command displays a list of changes made since the current state of the feature branch.
   ```
   git status
   git diff
   ```
-- Stage the relevant files that you want to commit. **Stage** is a status of a change which is ready for commit. Here is some ways to do it.
+- Stage the files you want to include in the commit. **Staging** is the process of marking changes as ready to be committed. The following are some common ways to stage files.
   - To commit everything:
     ```
     git add .
@@ -72,17 +72,17 @@ This section focuses on the recommended workflow for working in a feature branch
   ```
   git push origin <branch name>
   ```
-- When your task has been finished and all the changes has been pushed to the feature branch, it is ready to be merged with the main branch.
-    - First pull changes that may have happened to the main branch.
+- When your task is complete and all changes have been pushed to the feature branch, the branch is ready to be merged into the main branch.
+    - First retrieve changes that may have happened to the main branch.
         ```
         git pull origin main
         ```
     - Resolve conflicts that may occure.
-    - Once you pushed the resolve of the conflicts, the feature branch it is ready to merged with main.
+    - Once you submit the resolves of the conflicts, the feature branch it is ready to merged into main.
         ```
         git merge origin/main
         ```
-- Since it is merged with main branch, you can delete the branch
+- Since it is merged into main branch, you can delete the branch
   ```
   git push origin --delete <branch name>
   ```
@@ -93,7 +93,7 @@ This section focuses on the recommended workflow for working in a feature branch
   ```
   git switch <branch name>
   ```
-- If you are not ready to push changes you can stash them and revive them when it is needed.
+- If you are not yet ready to push your changes, you can temporarily save them using Git Stash and restore them later when needed.
     - Stash all modified code
       ```
       git stash push -m "What is the code about"
@@ -108,7 +108,7 @@ This section focuses on the recommended workflow for working in a feature branch
         ```
         git stash list
         ```
-        Responce must be:
+        Responce must be similar to:
         ```
         stash@{0}: On <branch name>: What is the code about
         ```
@@ -116,11 +116,11 @@ This section focuses on the recommended workflow for working in a feature branch
       ```
       git stash apply stash@{0}
       ```
-- If accidentally commit changes that you want to revive and clear, you should follow this commands:
+- If you accidentally commit changes that you would like to undo while preserving your work, you can use the following commands to restore the changes and remove the commit:
   ```
   git reset --soft HEAD~1
   ```
-  Then you can stash the code if you need it for something else and then
+  Then you can stash the code if you need it for something else and then:
   ```
   git push --force
   ```
