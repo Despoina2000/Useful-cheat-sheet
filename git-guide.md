@@ -1,19 +1,20 @@
 # Menu
-- [What is Git Repository and how we can use it](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#what-is-git-repository-and-how-we-can-use-it)
-- [How to install Git](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-install-git)
-- [How to initialize a new Git repository](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-initialize-a-new-git-repository)
-- [How to clone an existing Git repository](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-clone-an-existing-git-repository)
-- [How to create a Feature Branch](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-create-a-feature-branch)
-- [How to work on a Feature Branch](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#how-to-work-on-a-feature-branch)
-- [Special cases](https://github.com/Despoina2000/Useful-cheat-sheet/blob/main/git-guide.md#special-cases)
+- [What is Git Repository and how we can use it](#what-is-git-repository-and-how-we-can-use-it)
+- [How to install Git](#how-to-install-git)
+- [How to initialize a new Git repository](#how-to-initialize-a-new-git-repository)
+- [How to clone an existing Git repository](#how-to-clone-an-existing-git-repository)
+- [How to create a Feature Branch](#how-to-create-a-feature-branch)
+- [How to work on a Feature Branch](#how-to-work-on-a-feature-branch)
+- [Special cases](#special-cases)
+- [Terminology](#terminology)
 
 
 # What is Git Repository and how we can use it
-A Git repository is a virtual storage space for your project. It allows you to preserve many versions of your code that you can access, alter, and update as required. It resembles the image below:
+A [Git repository](#git-repository) is a virtual storage space for your project. It allows you to preserve many versions of your code that you can access, alter, and update as required. It resembles the image below:
 
 <img width="1000" height="372" alt="image" src="https://github.com/user-attachments/assets/1ffa2c78-c7f0-4f35-8592-9d41ebdee9cd" />
 
-First, you'll notice it's a liner graphic with branches. Each **branch** represents a version of the project at the time and point it was constructed. The purpose is to maintain a distinct feature/task without affecting the primary project, which is the **main** branch. When you've finished structuring it, you may merge it into the main branch. Working with branches allows you to work on several features/tasks at the same time. 
+First, you'll notice it's a liner graphic with [branches](#branch). The purpose is to maintain a distinct feature/task without affecting the primary project, which is the **main** [branch](#branch). When you've finished structuring it, you may merge it into the main [branch](#branch). Working with [branches](#branch) allows you to work on several features/tasks at the same time. 
 
 # How to install Git
 
@@ -31,20 +32,20 @@ Navigate through the file directories and discover the path to the folder where 
  2. <img width="1902" height="155" alt="image" src="https://github.com/user-attachments/assets/9b09d055-878c-402c-8554-7d71ac1b21aa" />
  3. <img width="1900" height="158" alt="image" src="https://github.com/user-attachments/assets/0dd4bf5f-e0ca-439f-949e-2cc635a22fb7" />
 
- Once completing the previous step, you can initialize your first Git repository by executing the following command:
+ Once completing the previous step, you can initialize your first [Git repository](#git-repository) by executing the following command:
  ```
  git init
  ```
 # How to clone an existing Git repository
 
-If a Git repository for the project has already been initialized and hosted by another contributor, you should clone the existing repository. To accomplish this, follow the steps to open Command Prompt in the directory where the project will be stored, then run the following command:
+If a [Git repository](#git-repository) for the project has already been initialized and hosted by another contributor, you should [clone](#clone) the existing repository. To accomplish this, follow the steps to open Command Prompt in the directory where the project will be stored, then run the following command:
 ```
 git clone <repository url>
 ```
 
 # How to create a Feature Branch
 
-The appropriate practice to ensure your changes do not affect the main branch, create a dedicated branch for your work by running the following command:
+The appropriate practice to ensure your changes do not affect the main [branch](#branch), create a dedicated [branch](#branch) for your work by running the following command:
 
 ```
 git branch <branch name>
@@ -52,9 +53,9 @@ git branch <branch name>
 
 # How to work on a Feature Branch
 
-This section focuses on the recommended workflow for working in a feature branch that will later be merged into the main branch. Steps marked with `*` are required when multiple contributors are working on the same feature branch; otherwise, they can be omitted.
+This section focuses on the recommended workflow for working in a feature [branch](#branch) that will later be merged into the main branch. Steps marked with `*` are required when multiple contributors are working on the same feature branch; otherwise, they can be omitted.
 
-- You need to switch to the feature branch.
+- You need to switch to the feature [branch](#branch).
   ```
   git switch <branch name>
   ```
@@ -63,18 +64,18 @@ This section focuses on the recommended workflow for working in a feature branch
   git switch -c <branch name>
   ```
 
-- `*` Check if other contributers have made any changes in the feature branch, such as altering existing files or adding files.
+- `*` Check if other contributers have made any changes in the feature [branch](#branch), such as altering existing files or adding files.
   ```
   git pull origin <branch name>
   ```
-- `*` After pulling changes, you may need to resolve merge conflicts. **Conflicts** occur when two or more contributors modify the same lines within a file, or when one contributor deletes a file that another contributor has modified. In such situations, Git cannot automatically determine which changes should be retained and requires manual resolution.
-- Implement your changes locally. At this stage, your modifications remain on your local machine and do not affect the remote feature branch.
-- Review the modified files before creating a commit. **Commit** records and saves your changes to the branch's history. The following command displays a list of changes made since the current state of the feature branch.
+- `*` After pulling changes, you may need to resolve merge [conflicts](#conflicts). In such situations, Git cannot automatically determine which changes should be retained and requires manual resolution.
+- Implement your changes locally. At this stage, your modifications remain on your local machine and do not affect the remote feature [branch](#branch).
+- Review the modified files before creating a [commit](#commit). The following command displays a list of changes made since the current state of the feature [branch](#branch).
   ```
   git status
   git diff
   ```
-- Stage the files you want to include in the commit. **Staging** is the process of marking changes as ready to be committed. The following are some common ways to stage files.
+- [Stage](#staging) the files you want to include in the [commit](#commit). The following are some common ways to stage files.
   - To commit everything:
     ```
     git add .
@@ -87,21 +88,21 @@ This section focuses on the recommended workflow for working in a feature branch
     ```
     git commit -m "Appropriate message that descripe the purpose of the major changes."
     ```
-- Update the branch to the remote repository.
+- Update the [branch](#branch) to the remote [repository](#git-repository).
   ```
   git push origin <branch name>
   ```
-- When your task is complete and all changes have been pushed to the feature branch, the branch is ready to be merged into the main branch.
-    - First retrieve changes that may have happened to the main branch.
+- When your task is complete and all changes have been pushed to the feature [branch](#branch), the branch is ready to be merged into the main branch.
+    - First retrieve changes that may have happened to the main [branch](#branch).
         ```
         git pull origin main
         ```
-    - Resolve conflicts that may occure.
-    - Once you submit the resolves of the conflicts, the feature branch it is ready to merged into main.
+    - Resolve [conflicts](#conflicts) that may occure.
+    - Once you submit the resolves of the conflicts, the feature [branch](#branch) it is ready to merged into main.
         ```
         git merge origin/main
         ```
-- Since it is merged into main branch, you can delete the branch
+- Since it is merged into main [branch](#branch), you can delete the branch
   ```
   git push origin --delete <branch name>
   ```
@@ -111,12 +112,12 @@ This section focuses on the recommended workflow for working in a feature branch
 ```
 git restore <file>
 ```
-- If a file accidentally being staged, you can undo the action by using this command:
+- If a file accidentally being [staged](#staging), you can undo the action by using this command:
 ```
 git restore --staged <file>
 ```
 
-- If you are not yet ready to push your changes, you can temporarily save them using Git Stash and restore them later when needed.
+- If you are not yet ready to push your changes, you can temporarily save them using [Git Stash](#stashing) and restore them later when needed.
     - Stash all modified code
       ```
       git stash push -m "What is the code about"
@@ -139,16 +140,31 @@ git restore --staged <file>
       ```
       git stash apply stash@{0}
       ```
-- If you accidentally commit changes that you would like to undo while preserving your work, you can use the following commands to restore the changes and remove the commit:
+- If you accidentally [commit](#commit) changes that you would like to undo while preserving your work, you can use the following commands to restore the changes and remove the commit:
   ```
   git reset --soft HEAD~1
   ```
-  Then you can stash the code if you need it for something else and then:
+  Then you can [stash](#stashing) the code if you need it for something else and then:
   ```
   git push --force
   ```
 
- 
+# Terminology
+
+ - ### Git repository:
+     is a virtual storage space for your project
+ - ### Branch:
+     each one represents a separate version of the project at the time and point it was constructed to implement a task
+ - ### Clone: 
+   create a copy of a branch
+ - ### Commit: 
+   records and saves your changes to the branch's history.
+ - ### Conflicts: 
+   occur when two or more contributors modify the same lines within a file, or when one contributor deletes a file that another contributor has modified.
+ - ### Staging: 
+   is the process of marking changes as ready to be committed. The following are some common ways to stage files.
+ - ### Stashing: 
+   save changes and restore them later when needed
 
 
 
